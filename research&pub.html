@@ -28,7 +28,7 @@
 
         /* Navbar */
         .navbar { background-color: var(--dark-blue) !important; padding: 0.5rem 0; }
-        .nav-link { color: white !important; font-size: 0.9rem; margin: 0 8px; }
+        .nav-link { color: white !important; font-size: 0.9rem; margin: 0 8px; position: relative; }
         .nav-link.active::after {
             content: ''; position: absolute; bottom: -5px; left: 0; width: 100%; height: 3px; background: var(--accent-orange);
         }
@@ -48,15 +48,19 @@
         .pub-list { list-style: none; padding-left: 0; }
         .pub-item { padding: 15px 0; border-bottom: 1px solid #f1f1f1; display: flex; }
         .pub-number { min-width: 35px; font-weight: 700; color: var(--accent-orange); }
-        .pub-content { font-size: 0.95rem; color: #444; }
+        .pub-content { font-size: 0.92rem; color: #444; }
         .pub-title { font-weight: 600; color: #000; }
         .pub-journal { font-style: italic; color: var(--dark-blue); }
         
         .research-interests-box { background: var(--light-bg); border-left: 5px solid var(--dark-blue); padding: 20px; border-radius: 0 4px 4px 0; }
 
         .jump-links { background: #fdf7ee; padding: 15px; border-radius: 8px; margin-bottom: 30px; }
-        .jump-links a { color: var(--dark-blue); text-decoration: none; margin-right: 15px; font-weight: 600; font-size: 0.9rem; }
+        .jump-links a { color: var(--dark-blue); text-decoration: none; margin-right: 15px; font-weight: 600; font-size: 0.85rem; }
         .jump-links a:hover { color: var(--accent-orange); }
+
+        /* Badges */
+        .badge-awarded { background-color: #198754; color: white; padding: 5px 10px; border-radius: 4px; font-size: 0.7rem; text-transform: uppercase; font-weight: 700;}
+        .badge-progress { background-color: #0d6efd; color: white; padding: 5px 10px; border-radius: 4px; font-size: 0.7rem; text-transform: uppercase; font-weight: 700;}
     </style>
 </head>
 <body>
@@ -85,8 +89,9 @@
                 <div class="sidebar-card">
                     <div class="sidebar-header">Resources</div>
                     <a href="https://scholar.google.com/citations?user=-PDHV2MAAAAJ" target="_blank" class="link-item"><i class="fas fa-graduation-cap me-2 text-primary"></i> Google Scholar</a>
-                    <a href="https://www.researchgate.net/profile/Mahesh-Jat" class="link-item"><i class="fab fa-researchgate me-2 text-success"></i> Research Gate</a>
-                    <a href="https://www.sciencedirect.com/author/14060194700/mahesh-kumar-kumar-jat" class="link-item"><i class="fas fa-book me-2 text-info"></i> Science Direct Profile</a>
+                    <a href="https://www.researchgate.net/profile/Mahesh-Jat" target="_blank" class="link-item"><i class="fab fa-researchgate me-2 text-success"></i> Research Gate</a>
+                    <a href="https://www.sciencedirect.com/author/14060194700/mahesh-kumar-kumar-jat" target="_blank" class="link-item"><i class="fas fa-book me-2 text-info"></i> Science Direct</a>
+                    <a href="https://orcid.org/0000-0003-4242-5368" target="_blank" class="link-item"><i class="fab fa-orcid me-2 text-success"></i> ORCID Profile</a>
                 </div>
             </div>
 
@@ -108,12 +113,12 @@
                 <section id="interests">
                     <h3 class="section-heading">Research Interests</h3>
                     <div class="research-interests-box">
-                        <ul class="mb-0">
+                        <ul class="mb-0 small">
                             <li>Planning and design of water-related services, Geospatial technologies like Remote Sensing, GIS & satellite-based positioning.</li>
                             <li>Land use/land cover change modelling & predictions, Integrated water resources planning & management.</li>
                             <li>Climate change impact on water resources and optimum land use planning.</li>
                             <li>Urban Water Management Modelling (supply and demand integration).</li>
-                            <li>Remote sensing and GIS-based rainfall-runoff modelling.</li>
+                            <li>Remote sensing and GIS-based rainfall-runoff modelling and effect of dynamic land use.</li>
                             <li>Geospatial modelling for surveillance and monitoring of vector borne diseases.</li>
                         </ul>
                     </div>
@@ -138,16 +143,30 @@
                 <section id="phd">
                     <h3 class="section-heading">Ph.D. Dissertations Supervised</h3>
                     <div class="table-responsive">
-                        <table class="table table-hover border">
-                            <thead class="table-light">
-                                <tr><th>No.</th><th>Scholar Name</th><th>Research Topic / Status</th></tr>
+                        <table class="table table-bordered table-hover align-middle small">
+                            <thead class="table-light text-center">
+                                <tr><th>No.</th><th>Scholar Name</th><th>Research Topic</th><th>Status</th></tr>
                             </thead>
                             <tbody>
-                                <tr><td>1</td><td>Mr. Yuddhveer Singh</td><td>Rainfall-runoff modelling for urbanized catchments (Awarded)</td></tr>
-                                <tr><td>2</td><td>Mr. Surendra Singh</td><td>Impact of Land Use Land cover Changes on Climate (Awarded)</td></tr>
-                                <tr><td>3</td><td>Mr. Santosh Pingle</td><td>Integrated Urban Water Management Modelling (Awarded)</td></tr>
-                                <tr><td>...</td><td colspan="2" class="text-muted text-center">Refer to CV for full list (19 Scholars total)</td></tr>
-                                <tr><td>19</td><td>Mr. Nitesh Amberia</td><td>Climate Change Impact Assessment (In Progress)</td></tr>
+                                <tr><td class="text-center">1</td><td>Mr. Yuddhveer Singh</td><td>Rainfall-runoff modelling for urbanized catchments</td><td class="text-center"><span class="badge-awarded">Awarded</span></td></tr>
+                                <tr><td class="text-center">2</td><td>Mr. Surendra Singh</td><td>Impact of Land Use Land cover Changes on Climate and Optimum Adaptation Measures</td><td class="text-center"><span class="badge-awarded">Awarded</span></td></tr>
+                                <tr><td class="text-center">3</td><td>Mr. Santosh Pingle</td><td>Integrated Urban Water Management Modelling Considering Climate Change</td><td class="text-center"><span class="badge-awarded">Awarded</span></td></tr>
+                                <tr><td class="text-center">4</td><td>Mr. Rohitashv Kumar</td><td>Modelling of Moisture Uptake by Plants in a Multi-Layer Soil</td><td class="text-center"><span class="badge-awarded">Awarded</span></td></tr>
+                                <tr><td class="text-center">5</td><td>Miss Suchi Mala</td><td>Geographic Information System based Disease Surveillance and Optimum Clustering</td><td class="text-center"><span class="badge-awarded">Awarded</span></td></tr>
+                                <tr><td class="text-center">6</td><td>Ms. Ankita Saxena</td><td>Urban Growth Assessment and Modelling using Geospatial Techniques and Cellular Automata</td><td class="text-center"><span class="badge-awarded">Awarded</span></td></tr>
+                                <tr><td class="text-center">7</td><td>Ms. Sushila Dahiya</td><td>Development of an Approach for Building Extraction From Satellite Image</td><td class="text-center"><span class="badge-awarded">Awarded</span></td></tr>
+                                <tr><td class="text-center">8</td><td>Miss Gargi Sharma</td><td>Wastewater Treatment Through Constructed Wetlands</td><td class="text-center"><span class="badge-awarded">Awarded</span></td></tr>
+                                <tr><td class="text-center">9</td><td>Miss Arjita Saxena</td><td>Climate Change Assessment on watershed Response</td><td class="text-center"><span class="badge-awarded">Awarded</span></td></tr>
+                                <tr><td class="text-center">10</td><td>Mr. Sandeep Singh</td><td>Development of Constitutive Model for Liquefiable Sand</td><td class="text-center"><span class="badge-awarded">Awarded</span></td></tr>
+                                <tr><td class="text-center">11</td><td>Mr. Ankan Jana</td><td>Optimum adaptations for LULC change-induced climate change impacts</td><td class="text-center"><span class="badge-awarded">Awarded</span></td></tr>
+                                <tr><td class="text-center">12</td><td>Mr. Mithun Choudhary</td><td>Hydrological impact assessment of climate change</td><td class="text-center"><span class="badge-awarded">Awarded</span></td></tr>
+                                <tr><td class="text-center">13</td><td>Mr. Abhishek Kumar Tripathi</td><td>Assessment of Water Quality of Surface Water bodies</td><td class="text-center"><span class="badge-awarded">Awarded</span></td></tr>
+                                <tr><td class="text-center">14</td><td>Mr. Sudesh Singh Choudhary</td><td>Geospatial technologies and crop health monitoring</td><td class="text-center"><span class="badge-progress"> In Completion</span></td></tr>
+                                 <tr><td class="text-center">15</td><td>Mr. Saurabh Singh</td><td>Ecological impact assessment of climate change</td><td class="text-center"><span class="badge-progress"> In Completion</span></td></tr>
+                                  <tr><td class="text-center">16</td><td>Mr. Vijay Anand</td><td>Object-based target detection from Remote Sensing Images</td><td class="text-center"><span class="badge-progress"> In Process</span></td></tr>
+                                  <tr><td class="text-center">17</td><td>Mr. Rahul Singh</td><td>GIS-based seismic risk assessment</td><td class="text-center"><span class="badge-progress"> In Process</span></td></tr>
+                                  <tr><td class="text-center">18</td><td>Mr. Ashutosh Chaturvedi</td><td>Development Of IDF Curves For Different Climate Change Scenarios</td><td class="text-center"><span class="badge-progress"> In Process</span></td></tr>
+                                <tr><td class="text-center">19</td><td>Mr. Nitesh Amberia</td><td>Climate Change Impact Assessment</td><td class="text-center"><span class="badge-progress">In Progress</span></td></tr>
                             </tbody>
                         </table>
                     </div>
@@ -160,52 +179,41 @@
                         <li class="pub-item">
                             <div class="pub-number">1.</div>
                             <div class="pub-content">
-                                Chenchouni, H., Jat, M.K., et al. (2022). <span class="pub-title">"Recent Advancements from Aquifers to Skies in Hydrogeology, Geoecology, and Atmospheric Sciences"</span>, Springer Nature, Book series: ASTI.
+                                Haroun Chenchouni, Jat, M.K., et al. (2022). <span class="pub-title">"Recent Advancements from Aquifers to Skies in Hydrogeology, Geoecology, and Atmospheric Sciences"</span>, <span class="pub-journal">Springer Nature</span>, ASTI Series.
                             </div>
                         </li>
                         <li class="pub-item">
                             <div class="pub-number">2.</div>
                             <div class="pub-content">
-                                Bezzeghoud, M., Jat, M.K., et al. (2022). <span class="pub-title">"Recent Research on Geotechnical Engineering, Remote Sensing"</span>, Springer Nature, Book series: ASTI.
+                                Mourad Bezzeghoud, Jat, M.K., et al. (2022). <span class="pub-title">"Recent Research on Geotechnical Engineering, Remote Sensing, Geophysics and Earthquake Seismology"</span>, <span class="pub-journal">Springer Nature</span>, ASTI Series.
                             </div>
                         </li>
                     </ul>
                 </section>
 
-                <!-- Research Papers in Refereed Journals -->
+                <!-- Research Papers -->
                 <section id="journals">
-                    <h3 class="section-heading">Papers in Refereed Journals</h3>
-                    <div class="sub-category">Recent Publications (2024-2026)</div>
+                    <h3 class="section-heading">Papers in Refereed Journals (71 Total)</h3>
                     <ul class="pub-list">
-                        <li class="pub-item">
-                            <div class="pub-number">1.</div>
-                            <div class="pub-content">Amberiya Nitesh, Arora, Himanshu and <strong>Jat M. K.</strong> (2026). <span class="pub-title">"Modeling Organic Matter Impacts on Soil Moisture Retention Using a Generalized van-Genuchten Framework"</span>, <span class="pub-journal">Journal of Hydrologic Engineering, ASCE</span> (Accepted).</div>
-                        </li>
-                        <li class="pub-item">
-                            <div class="pub-number">2.</div>
-                            <div class="pub-content">Choudhary, S. S., & <strong>Jat, M. K.</strong> (2025). <span class="pub-title">"Remote sensing-based yield estimation of wheat crops at farm scale"</span>, <span class="pub-journal">Journal of Agrometeorology</span>, 27, 407-414.</div>
-                        </li>
-                        <li class="pub-item">
-                            <div class="pub-number">3.</div>
-                            <div class="pub-content">Singh, S., <strong>Jat, M.K.</strong>, & Kumar, S. (2025). <span class="pub-title">"Remote Sensing-Based Framework for Ecological Assessment"</span>, <span class="pub-journal">International Journal of Environmental Sciences</span>, 2412-2429.</div>
-                        </li>
-                        <!-- ADD MORE ENTRIES HERE -->
+                        <li class="pub-item"><div class="pub-number">1.</div><div class="pub-content">Amberiya N., Arora, H., <strong>Jat M. K.</strong> (2026). <span class="pub-title">"Modeling Organic Matter Impacts on Soil Moisture Retention"</span>, <span class="pub-journal">Journal of Hydrologic Engineering, ASCE</span> (Accepted).</div></li>
+                        <li class="pub-item"><div class="pub-number">2.</div><div class="pub-content">Choudhary, S. S., & <strong>Jat, M. K.</strong> (2025). <span class="pub-title">"Remote sensing-based yield estimation of wheat crops at farm scale"</span>, <span class="pub-journal">Journal of Agrometeorology</span>. 27. 407-414.</div></li>
+                        <li class="pub-item"><div class="pub-number">3.</div><div class="pub-content">Singh, S., <strong>Jat, M.K.</strong>, & Kumar, S. (2025). <span class="pub-title">"Remote Sensing-Based Framework for Ecological Assessment"</span>, <span class="pub-journal">Int. Journal of Environmental Sciences</span>.</div></li>
+                        <li class="pub-item"><div class="pub-number">12.</div><div class="pub-content">A. Sangwan, S. Choudhary, V. Anand, N. Kumar, A. Kumar, <strong>M. K. Jat</strong> (2024). <span class="pub-title">"A mathematical model for temperature-reducing potential of urban greenspaces"</span>, <span class="pub-journal">Earth Science Informatics</span>.</div></li>
+                        <li class="pub-item"><div class="pub-number">26.</div><div class="pub-content">Shuchi Mala and <strong>Mahesh Kumar Jat</strong> (2019). <span class="pub-title">"Implications of meteorological parameters on dengue fever occurrence"</span>, <span class="pub-journal">Science of Total Environment</span>. Elsevier.</div></li>
+                        <li class="pub-item"><div class="pub-number">40.</div><div class="pub-content">Santosh Pingale, <strong>Mahesh K. Jat</strong> and Deepak Khare (2014). <span class="pub-title">"Integrated Urban Water Management Modelling"</span>, <span class="pub-journal">Resource Conservation and Recycling</span>.</div></li>
+                        <li class="pub-item"><div class="pub-number">60.</div><div class="pub-content"><strong>Jat, Mahesh Kumar</strong>, Garg, P. K., and Khare, D. (2008). <span class="pub-title">"Modelling of urban growth using spatial analysis techniques"</span>, <span class="pub-journal">Int. Journal of Remote Sensing</span>.</div></li>
+                        <li class="pub-item"><div class="pub-number">71.</div><div class="pub-content"><strong>Jat, M. K.</strong>, Kumar, S., and Poonia, M. P. (2000). <span class="pub-title">"Methane, So2 Reduction Through Bio-gas Generation"</span>, <span class="pub-journal">National J. of Env. Sciences</span>.</div></li>
                     </ul>
                 </section>
 
                 <!-- Conference Papers -->
                 <section id="conferences">
-                    <h3 class="section-heading">Conference Publications</h3>
+                    <h3 class="section-heading">Conference Publications (66 Total)</h3>
                     <ul class="pub-list">
-                        <li class="pub-item">
-                            <div class="pub-number">1.</div>
-                            <div class="pub-content">Tripathi, A.K., Kumar, S. and <strong>Jat, M.K.</strong> (2024). <span class="pub-title">"Evolution and Roadblocks in Water Quality Assessment via Remote Sensing"</span>, HYDRO-2024, CWPRS, Pune.</div>
-                        </li>
-                        <li class="pub-item">
-                            <div class="pub-number">2.</div>
-                            <div class="pub-content">Tripathi, A.K., Kumar, S., <strong>Jat, M.K.</strong> and Sharma, G.N. (2024). <span class="pub-title">"Status and Challenges of Ganga River Water Quality in Kanpur"</span>, ICEST: 2024, SVNIT Surat.</div>
-                        </li>
-                        <!-- ADD MORE ENTRIES HERE -->
+                        <li class="pub-item"><div class="pub-number">1.</div><div class="pub-content">A.K. Tripathi, S. Kumar and <strong>M.K. Jat</strong> (2024). <span class="pub-title">"Water Quality Assessment via Remote Sensing"</span>, HYDRO-2024, CWPRS, Pune.</div></li>
+                        <li class="pub-item"><div class="pub-number">12.</div><div class="pub-content">Jana, A., <strong>Jat, M. K.</strong>, and Choudhary, M. (2020). <span class="pub-title">"Estimation of surface heat fluxes using Remote Sensing"</span>, HYDRO 2020.</div></li>
+                        <li class="pub-item"><div class="pub-number">32.</div><div class="pub-content">Surendra P. Singh and <strong>Mahesh K. Jat</strong> (2015). <span class="pub-title">"Assessment of Climate Change Using Climatic Data"</span>, HYDRO-2015, IIT Roorkee.</div></li>
+                        <li class="pub-item"><div class="pub-number">66.</div><div class="pub-content"><strong>Jat, M. K.</strong>, Jain, A. K. (2002). <span class="pub-title">"Cogeneration: Energy from Waste"</span>, MNIT Jaipur.</div></li>
                     </ul>
                 </section>
 
@@ -213,10 +221,9 @@
                 <section id="chapters">
                     <h3 class="section-heading">Book Chapters</h3>
                     <ul class="pub-list">
-                        <li class="pub-item">
-                            <div class="pub-number">1.</div>
-                            <div class="pub-content">Tripathi, A.K., Kumar, S., <strong>Jat, M.K.</strong> (2024). <span class="pub-title">"Monitoring Surface Water Quality: Models and Their Utilization"</span>, Cambridge Scholars Publishing, U.K.</div>
-                        </li>
+                        <li class="pub-item"><div class="pub-number">1.</div><div class="pub-content">A.K. Tripathi, S. Kumar, <strong>M.K. Jat</strong> (2024). <span class="pub-title">"Monitoring Surface Water Quality: Models and Their Utilization"</span>, Cambridge Scholars Publishing, U.K.</div></li>
+                        <li class="pub-item"><div class="pub-number">2.</div><div class="pub-content">Choudhary, M., <strong>Jat, M.K.</strong> (2023). <span class="pub-title">"Anthropogenic Influence on Streamflow"</span>, Springer, Singapore.</div></li>
+                        <li class="pub-item"><div class="pub-number">5.</div><div class="pub-content"><strong>Mahesh Kumar Jat</strong>, Deepak Khare and Ashok Sharma (2017). <span class="pub-title">"Urban Water Management"</span>, published by ASCE.</div></li>
                     </ul>
                 </section>
 
