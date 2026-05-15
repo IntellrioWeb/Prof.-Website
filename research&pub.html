@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research & Publications | Prof. Mahesh Kumar Jat</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --dark-blue: #001c44;
+            --accent-orange: #f39c12;
+            --text-gray: #444;
+            --light-bg: #f8f9fa;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #fff;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Navbar */
+        .navbar { background-color: var(--dark-blue) !important; padding: 0.5rem 0; }
+        .nav-link { color: white !important; font-size: 0.9rem; margin: 0 8px; }
+        .nav-link.active::after {
+            content: ''; position: absolute; bottom: -5px; left: 0; width: 100%; height: 3px; background: var(--accent-orange);
+        }
+
+        /* Sidebar */
+        .sidebar-card { border: 1px solid #eee; border-radius: 4px; overflow: hidden; margin-bottom: 30px; position: sticky; top: 90px; }
+        .sidebar-header { background-color: var(--dark-blue); color: white; padding: 12px 20px; font-weight: 600; }
+        .link-item { display: flex; align-items: center; padding: 12px 20px; border-bottom: 1px solid #eee; text-decoration: none; color: var(--text-gray); font-size: 0.9rem; }
+        .link-item:hover { background: #f8f9fa; color: var(--dark-blue); }
+
+        /* Headings */
+        .section-heading { font-weight: 700; color: var(--dark-blue); margin-top: 40px; margin-bottom: 20px; position: relative; padding-bottom: 10px; border-bottom: 2px solid #eee; }
+        .section-heading::after { content: ''; position: absolute; bottom: -2px; left: 0; width: 60px; height: 3px; background: var(--accent-orange); }
+        .sub-category { color: var(--accent-orange); font-weight: 700; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px; margin-top: 30px; }
+
+        /* Lists */
+        .pub-list { list-style: none; padding-left: 0; }
+        .pub-item { padding: 15px 0; border-bottom: 1px solid #f1f1f1; display: flex; }
+        .pub-number { min-width: 35px; font-weight: 700; color: var(--accent-orange); }
+        .pub-content { font-size: 0.95rem; color: #444; }
+        .pub-title { font-weight: 600; color: #000; }
+        .pub-journal { font-style: italic; color: var(--dark-blue); }
+        
+        .research-interests-box { background: var(--light-bg); border-left: 5px solid var(--dark-blue); padding: 20px; border-radius: 0 4px 4px 0; }
+
+        .jump-links { background: #fdf7ee; padding: 15px; border-radius: 8px; margin-bottom: 30px; }
+        .jump-links a { color: var(--dark-blue); text-decoration: none; margin-right: 15px; font-weight: 600; font-size: 0.9rem; }
+        .jump-links a:hover { color: var(--accent-orange); }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">Prof. Mahesh Kumar Jat</a>
+            <div class="collapse navbar-collapse" id="mainNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="research&pub.html">Research & Publications</a></li>
+                    <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="professionalactivities.html">Professional Activities</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container py-5">
+        <div class="row">
+            <!-- Sidebar -->
+            <div class="col-md-3">
+                <div class="sidebar-card">
+                    <div class="sidebar-header">Resources</div>
+                    <a href="https://scholar.google.com/citations?user=-PDHV2MAAAAJ" target="_blank" class="link-item"><i class="fas fa-graduation-cap me-2 text-primary"></i> Google Scholar</a>
+                    <a href="https://www.researchgate.net/profile/Mahesh-Jat" class="link-item"><i class="fab fa-researchgate me-2 text-success"></i> Research Gate</a>
+                    <a href="https://www.sciencedirect.com/author/14060194700/mahesh-kumar-kumar-jat" class="link-item"><i class="fas fa-book me-2 text-info"></i> Science Direct Profile</a>
+                </div>
+            </div>
+
+            <!-- Main Content -->
+            <div class="col-md-9 ps-md-5">
+                <h2 class="fw-bold text-dark-blue mb-4">Research & Publications</h2>
+
+                <!-- Quick Navigation -->
+                <div class="jump-links">
+                    <i class="fas fa-bolt me-2 text-warning"></i> Jump to: 
+                    <a href="#interests">Interests</a> | 
+                    <a href="#phd">Ph.D. Supervised</a> | 
+                    <a href="#books">Books</a> | 
+                    <a href="#journals">Journals</a> | 
+                    <a href="#conferences">Conferences</a>
+                </div>
+
+                <!-- Research Interests -->
+                <section id="interests">
+                    <h3 class="section-heading">Research Interests</h3>
+                    <div class="research-interests-box">
+                        <ul class="mb-0">
+                            <li>Planning and design of water-related services, Geospatial technologies like Remote Sensing, GIS & satellite-based positioning.</li>
+                            <li>Land use/land cover change modelling & predictions, Integrated water resources planning & management.</li>
+                            <li>Climate change impact on water resources and optimum land use planning.</li>
+                            <li>Urban Water Management Modelling (supply and demand integration).</li>
+                            <li>Remote sensing and GIS-based rainfall-runoff modelling.</li>
+                            <li>Geospatial modelling for surveillance and monitoring of vector borne diseases.</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- Editorial Experience -->
+                <section id="editorial">
+                    <h3 class="section-heading">Editorial Experience</h3>
+                    <ul class="pub-list">
+                        <li class="pub-item">
+                            <div class="pub-number">1.</div>
+                            <div class="pub-content">Associate Editor of <strong>"Arabian Journal of Geosciences"</strong>, Publisher Springer (2019 – Continue).</div>
+                        </li>
+                        <li class="pub-item">
+                            <div class="pub-number">2.</div>
+                            <div class="pub-content">Associate Editor of <strong>"Korean Journal of Remote Sensing"</strong> (2018-2020, 2023-2025).</div>
+                        </li>
+                    </ul>
+                </section>
+
+                <!-- Ph.D. Supervised -->
+                <section id="phd">
+                    <h3 class="section-heading">Ph.D. Dissertations Supervised</h3>
+                    <div class="table-responsive">
+                        <table class="table table-hover border">
+                            <thead class="table-light">
+                                <tr><th>No.</th><th>Scholar Name</th><th>Research Topic / Status</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>1</td><td>Mr. Yuddhveer Singh</td><td>Rainfall-runoff modelling for urbanized catchments (Awarded)</td></tr>
+                                <tr><td>2</td><td>Mr. Surendra Singh</td><td>Impact of Land Use Land cover Changes on Climate (Awarded)</td></tr>
+                                <tr><td>3</td><td>Mr. Santosh Pingle</td><td>Integrated Urban Water Management Modelling (Awarded)</td></tr>
+                                <tr><td>...</td><td colspan="2" class="text-muted text-center">Refer to CV for full list (19 Scholars total)</td></tr>
+                                <tr><td>19</td><td>Mr. Nitesh Amberia</td><td>Climate Change Impact Assessment (In Progress)</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- Books Published -->
+                <section id="books">
+                    <h3 class="section-heading">Books Published</h3>
+                    <ul class="pub-list">
+                        <li class="pub-item">
+                            <div class="pub-number">1.</div>
+                            <div class="pub-content">
+                                Chenchouni, H., Jat, M.K., et al. (2022). <span class="pub-title">"Recent Advancements from Aquifers to Skies in Hydrogeology, Geoecology, and Atmospheric Sciences"</span>, Springer Nature, Book series: ASTI.
+                            </div>
+                        </li>
+                        <li class="pub-item">
+                            <div class="pub-number">2.</div>
+                            <div class="pub-content">
+                                Bezzeghoud, M., Jat, M.K., et al. (2022). <span class="pub-title">"Recent Research on Geotechnical Engineering, Remote Sensing"</span>, Springer Nature, Book series: ASTI.
+                            </div>
+                        </li>
+                    </ul>
+                </section>
+
+                <!-- Research Papers in Refereed Journals -->
+                <section id="journals">
+                    <h3 class="section-heading">Papers in Refereed Journals</h3>
+                    <div class="sub-category">Recent Publications (2024-2026)</div>
+                    <ul class="pub-list">
+                        <li class="pub-item">
+                            <div class="pub-number">1.</div>
+                            <div class="pub-content">Amberiya Nitesh, Arora, Himanshu and <strong>Jat M. K.</strong> (2026). <span class="pub-title">"Modeling Organic Matter Impacts on Soil Moisture Retention Using a Generalized van-Genuchten Framework"</span>, <span class="pub-journal">Journal of Hydrologic Engineering, ASCE</span> (Accepted).</div>
+                        </li>
+                        <li class="pub-item">
+                            <div class="pub-number">2.</div>
+                            <div class="pub-content">Choudhary, S. S., & <strong>Jat, M. K.</strong> (2025). <span class="pub-title">"Remote sensing-based yield estimation of wheat crops at farm scale"</span>, <span class="pub-journal">Journal of Agrometeorology</span>, 27, 407-414.</div>
+                        </li>
+                        <li class="pub-item">
+                            <div class="pub-number">3.</div>
+                            <div class="pub-content">Singh, S., <strong>Jat, M.K.</strong>, & Kumar, S. (2025). <span class="pub-title">"Remote Sensing-Based Framework for Ecological Assessment"</span>, <span class="pub-journal">International Journal of Environmental Sciences</span>, 2412-2429.</div>
+                        </li>
+                        <!-- ADD MORE ENTRIES HERE -->
+                    </ul>
+                </section>
+
+                <!-- Conference Papers -->
+                <section id="conferences">
+                    <h3 class="section-heading">Conference Publications</h3>
+                    <ul class="pub-list">
+                        <li class="pub-item">
+                            <div class="pub-number">1.</div>
+                            <div class="pub-content">Tripathi, A.K., Kumar, S. and <strong>Jat, M.K.</strong> (2024). <span class="pub-title">"Evolution and Roadblocks in Water Quality Assessment via Remote Sensing"</span>, HYDRO-2024, CWPRS, Pune.</div>
+                        </li>
+                        <li class="pub-item">
+                            <div class="pub-number">2.</div>
+                            <div class="pub-content">Tripathi, A.K., Kumar, S., <strong>Jat, M.K.</strong> and Sharma, G.N. (2024). <span class="pub-title">"Status and Challenges of Ganga River Water Quality in Kanpur"</span>, ICEST: 2024, SVNIT Surat.</div>
+                        </li>
+                        <!-- ADD MORE ENTRIES HERE -->
+                    </ul>
+                </section>
+
+                <!-- Book Chapters -->
+                <section id="chapters">
+                    <h3 class="section-heading">Book Chapters</h3>
+                    <ul class="pub-list">
+                        <li class="pub-item">
+                            <div class="pub-number">1.</div>
+                            <div class="pub-content">Tripathi, A.K., Kumar, S., <strong>Jat, M.K.</strong> (2024). <span class="pub-title">"Monitoring Surface Water Quality: Models and Their Utilization"</span>, Cambridge Scholars Publishing, U.K.</div>
+                        </li>
+                    </ul>
+                </section>
+
+            </div>
+        </div>
+    </div>
+
+    <footer class="py-4 border-top bg-light text-center text-muted small">
+        &copy; 2026 Prof. Mahesh Kumar Jat | MNIT Jaipur
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

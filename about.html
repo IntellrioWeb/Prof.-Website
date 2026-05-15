@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prof. Mahesh Kumar Jat | MNIT Jaipur</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --dark-blue: #001c44;
+            --accent-orange: #f39c12;
+            --text-gray: #555;
+            --light-bg: #f8f9fa;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #fff;
+            color: #333;
+        }
+
+        /* Navbar Styling */
+        .navbar {
+            background-color: var(--dark-blue) !important;
+            padding: 0.5rem 0;
+        }
+        .navbar-brand { font-weight: 700; font-size: 1.25rem; }
+        .nav-link { 
+            color: white !important; 
+            font-size: 0.9rem; 
+            margin: 0 5px;
+            position: relative;
+        }
+        .nav-link.active::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 20%;
+            width: 60%;
+            height: 3px;
+            background: var(--accent-orange);
+        }
+
+        /* Hero Section */
+        .hero-section {
+            position: relative;
+            padding: 60px 0;
+            background: linear-gradient(to right, #ffffff 40%, rgba(255, 255, 255, 0.1) 100%), 
+                        url('bg3.png'); /* Replace with MNIT Campus Image */
+            background-size: cover;
+            background-position: right center;
+        }
+
+        .profile-pic {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            border: 5px solid #eee;
+            object-fit: cover;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .prof-name { font-size: 2.8rem; font-weight: 700; color: var(--dark-blue); margin-bottom: 0; }
+        .prof-title { font-size: 1.2rem; color: #333; margin-bottom: 5px; }
+        .prof-uni { font-size: 1.2rem; color: #0056b3; font-weight: 600; }
+        
+        .orange-line {
+            width: 60px;
+            height: 4px;
+            background-color: var(--accent-orange);
+            margin: 15px 0;
+        }
+
+        /* ID Icons */
+        .id-link { display: flex; align-items: center; text-decoration: none; color: inherit; font-size: 0.85rem; margin-right: 20px; }
+        .id-icon { width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; margin-right: 8px; font-weight: bold; font-size: 12px; }
+        .bg-orcid { background-color: #A6CE39; }
+        .bg-scopus { background-color: #007399; }
+        .bg-scholar { background-color: #4285F4; }
+
+        /* Stats Bar */
+        .stats-container {
+            margin-top: -40px;
+            position: relative;
+            z-index: 10;
+        }
+        .stats-card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            padding: 30px 10px;
+            border: 1px solid #eee;
+        }
+        .stat-item {
+            text-align: center;
+            border-right: 1px solid #eee;
+        }
+        .stat-item:last-child { border-right: none; }
+        .stat-icon { font-size: 1.8rem; color: var(--dark-blue); margin-bottom: 15px; }
+        .stat-title { font-weight: 700; font-size: 0.95rem; margin-bottom: 5px; }
+        .stat-text { font-size: 0.8rem; color: var(--text-gray); }
+
+        /* Sidebar Quick Links */
+        .sidebar-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        .sidebar-header {
+            background-color: var(--dark-blue);
+            color: white;
+            padding: 12px 20px;
+            font-weight: 600;
+        }
+        .link-item {
+            display: flex;
+            align-items: center;
+            padding: 12px 20px;
+            border-bottom: 1px solid #f0f0f0;
+            text-decoration: none;
+            color: #444;
+            font-size: 0.9rem;
+            transition: background 0.2s;
+        }
+        .link-item:hover { background-color: #f8f9fa; color: var(--dark-blue); }
+        .link-item i { width: 25px; color: var(--dark-blue); }
+        .link-item .fa-orcid { color: #A6CE39; }
+        .link-item .fa-scopus { color: #007399; }
+        .link-item .fa-graduation-cap { color: #4285F4; }
+
+        /* Content Area */
+        .content-section { padding: 40px 0; }
+        .section-heading {
+            font-weight: 700;
+            color: var(--dark-blue);
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        .section-heading::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background: var(--accent-orange);
+        }
+        .about-text { color: #444; line-height: 1.8; text-align: justify; }
+        .btn-more {
+            background-color: var(--dark-blue);
+            color: white;
+            padding: 8px 25px;
+            border-radius: 4px;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 20px;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Prof. Mahesh Kumar Jat</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="mainNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="research&pub.html">Research & Publications</a></li>
+                    <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="professionalactivities.html">Professional Activities</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+                <div class="text-white"><i class="fas fa-search"></i></div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <div class="page-header">
+        <div class="container">
+            <h1 class="fw-bold color-dark-blue">Qualification & Experience</h1>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="index.html" class="text-decoration-none">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">About</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+
+    <div class="container pb-5">
+        <div class="row">
+            <div class="col-lg-12">
+                
+                <!-- Education Section -->
+                <h3 class="section-heading"><i class="fas fa-graduation-cap me-2"></i>Education</h3>
+                <div class="table-responsive custom-table">
+                    <table class="table table-hover align-middle mb-0">
+                        <thead>
+                            <tr>
+                                <th>Degree</th>
+                                <th>Year of Passing</th>
+                                <th>Division of Marks</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>B.E (Civil)</strong></td>
+                                <td>1997</td>
+                                <td>77.6 % (Hons.)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>M.E. (Water Resources)</strong></td>
+                                <td>2000</td>
+                                <td>76 % (Hons.)</td>
+                            </tr>
+                            <tr>
+                                <td colspan="3">
+                                    <strong>Ph.D</strong> <br>
+                                    <span class="text-muted">IIT Roorkee</span><br>
+                                    <span class="phd-topic">Topic: "Integrated Water Management Modelling in an Urban Fringe Using Remote Sensing and GIS"</span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Professional Employment Section -->
+                <h3 class="section-heading mt-5"><i class="fas fa-briefcase me-2"></i>Professional Employment</h3>
+                <div class="table-responsive custom-table">
+                    <table class="table table-hover align-middle mb-0">
+                        <thead>
+                            <tr>
+                                <th style="width: 50px;">S.No.</th>
+                                <th>Employer</th>
+                                <th>Post held</th>
+                                <th>Pay scale (Rs.)</th>
+                                <th>From</th>
+                                <th>To</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>MNIT Jaipur</td>
+                                <td>Professor</td>
+                                <td>14A - 195700.00</td>
+                                <td>14-05-2018</td>
+                                <td class="text-success fw-bold">Continue</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>MNIT Jaipur</td>
+                                <td>Associate Professor</td>
+                                <td>37400-67000/- AGP 9000</td>
+                                <td>25-3-2012</td>
+                                <td>13-05-2018</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>Gautam Buddha University</td>
+                                <td>Associate Professor</td>
+                                <td>37400-67000/- AGP 9500</td>
+                                <td>25-03-2010</td>
+                                <td>24-3-2012</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>M. N. I. T. Jaipur</td>
+                                <td>Reader</td>
+                                <td>12000-18300/-</td>
+                                <td>02-03-2008</td>
+                                <td>24-03-2010</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>M. N. I. T. Jaipur</td>
+                                <td>Sr. Lecturer</td>
+                                <td>10000 – 15200/-</td>
+                                <td>3-10-2006</td>
+                                <td>2-03-2008</td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>M. N. I. T. Jaipur</td>
+                                <td>Lecturer</td>
+                                <td>8000 – 13500/-</td>
+                                <td>6-3-1999</td>
+                                <td>3-10-2006</td>
+                            </tr>
+                            <tr>
+                                <td>7</td>
+                                <td>PHED, Govt. of Rajasthan</td>
+                                <td>Jr. Engineer</td>
+                                <td>6500 – 10500/-</td>
+                                <td>28-5-1998</td>
+                                <td>5-3-1999</td>
+                            </tr>
+                            <tr>
+                                <td>8</td>
+                                <td>R.S.E.B., Govt. of Rajasthan</td>
+                                <td>Jr. Engineer</td>
+                                <td>6500 – 10500/-</td>
+                                <td>18-12-1997</td>
+                                <td>27-5-1998</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Teaching Experience Summary -->
+                <h3 class="section-heading mt-5"><i class="fas fa-chalkboard-teacher me-2"></i>Experience Summary</h3>
+                <div class="experience-summary">
+                    <ul>
+                        <li><strong>Professor:</strong> May 14th, 2018 onwards</li>
+                        <li><strong>Associate Professor:</strong> 25th March 2010 to 13th May 2018</li>
+                        <li><strong>Reader:</strong> 2nd March 2008 to 24th March 2010</li>
+                        <li><strong>Senior Lecturer:</strong> 2 Years and 5 Months (October 03 2006 to March 2008)</li>
+                        <li><strong>Lecturer:</strong> 7 Years and 7 Months (March 06 1999 to Oct. 2006)</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Space -->
+    <footer class="py-4 mt-5 border-top bg-light">
+        <div class="container text-center text-muted small">
+            &copy; 2026 Prof. Mahesh Kumar Jat | Malaviya National Institute of Technology Jaipur
+        </div>
+    </footer>
+
+    <!-- Bootstrap Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
